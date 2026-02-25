@@ -123,6 +123,7 @@ body {
   background-image: linear-gradient(to top right, skyblue, #1d2598);
   min-height: 100vh;
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
