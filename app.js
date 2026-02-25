@@ -23,7 +23,6 @@
 //     items[i].style.opacity = stt > 2 ? 0 : 0.6;
 //   }
 // }
-
 // loadShow();
 
 let items = document.querySelectorAll(".slider .item");
