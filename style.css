@@ -240,10 +240,11 @@ img {
 .notice {
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;git status
+  
   justify-content: space-between;
   font-size: 15px;
   color: #333;
-  background-color: #f1f1f1;
+  background-color: transparent;
   top: 240px;
 }
