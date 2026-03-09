@@ -41,15 +41,6 @@ img {
   color: #333;
 }
 
-/* .sub-header {
-  background-color: #f1f1f1;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-} */
-
 .nmit-logo {
   height: 80px;
   width: auto;
@@ -86,20 +77,6 @@ img {
   background-color: #3d678c;
   transform: scale(1.05);
 }
-
-/* ------------------------------- */
-/* .Team-intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-  width: 100%;
-  font-size: 26px;
-  font-weight: 480;
-} */
-/* ---------------------------------- */
-
-/* Auto Sliding Label */
 
 .Team-intro {
   display: flex; /* make children align in a row */
@@ -150,14 +127,13 @@ img {
 }
 
 .slider {
-  position: relative;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 700px;
-  overflow: hidden;
+  min-height: 700px;
   perspective: 1000px;
+  padding: 20px;
 }
 
 .item {
@@ -264,114 +240,96 @@ img {
 
 /* <-------- Media Query --------> */
 
-@media (max-width: 1200px) {
-  .photo-info {
-    width: 500px;
-    left: 85%;
+/* Tablets (iPad, etc.) */
+@media (max-width: 1024px) {
+  .slider-body {
+    flex-direction: column; /* Stack heading, slider, and notice vertically */
+    padding-top: 50px;
   }
 
   .Team.heading {
-    left: 35%;
-    top: 200px;
-    font-size: 28px;
+    position: relative; /* Remove absolute positioning */
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 40px;
+  }
+
+  .item {
+    left: 50% !important; /* Center the active item */
+    transform: translateX(-50%) !important;
+  }
+
+  .photo-info {
+    position: relative;
+    width: 90vw; /* Use viewport width instead of fixed pixels */
+    left: 0 !important;
+    top: 440px; /* Push it below the photo */
+    margin: 0 auto;
+    transform: none !important;
   }
 
   .notice {
-    width: 45%;
-    margin-right: 5%;
+    width: 90%;
+    margin: 40px auto;
+    height: auto;
   }
 }
 
+/* Mobile Phones (iPhone, Android) */
 @media (max-width: 768px) {
-  .sub-header {
-    flex-direction: column;
+  .Header {
+    font-size: 14px;
+    height: auto;
+    padding: 10px;
     text-align: center;
+  }
+
+  .sub-header {
+    justify-content: center;
+    gap: 15px;
   }
 
   .nmit-logo {
     margin-left: 0;
-    height: 70px;
+    height: 60px;
   }
 
   .Search-box {
-    margin: 10px 0;
     padding-right: 0;
+    margin: 0 auto;
   }
 
   .search {
-    width: 200px;
+    width: 70vw; /* Input grows with screen */
   }
 
   .slider {
-    flex-direction: column;
-    height: auto;
+    height: 850px; /* Give room for stacked content */
   }
 
   .item {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
-    margin-bottom: 20px;
+    width: 260px; /* Slightly smaller photo for small screens */
   }
 
   .photo-info {
-    position: relative;
-    width: 100%;
-    left: 0;
-    margin-top: 10px;
-  }
-
-  .notice {
-    width: 90%;
-    margin: 20px auto;
+    font-size: 14px;
     height: auto;
-  }
-
-  .Team.heading {
-    position: static;
-    transform: none;
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .Header {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .search {
-    width: 160px;
-    height: 38px;
-  }
-
-  .search-btn {
-    width: 70px;
-    height: 34px;
-    font-size: 12px;
-  }
-
-  .Team-intro {
-    font-size: 14px;
-    gap: 4rem;
-  }
-
-  .item {
-    width: 90%;
-    height: auto;
-  }
-
-  .photo-info {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  .notice-heading {
-    font-size: 18px;
   }
 
   .notice-list {
-    font-size: 15px;
+    font-size: 16px;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .team-name {
+    font-size: 12px;
+  }
+
+  .search-btn {
+    width: 60px;
+    font-size: 11px;
   }
 }
