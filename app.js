@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loadShow();
   startAutoSlide();
 
-  // 🔥 HOVER EFFECT
+  //  HOVER EFFECT
   slider.addEventListener("mouseenter", stopAutoSlide);
   slider.addEventListener("mouseleave", startAutoSlide);
 });
